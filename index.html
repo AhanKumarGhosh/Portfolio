@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AhanKumarGhosh</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Scroll-trigger Animations (AOS) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header with Video Background -->
+    <header class="main-header">
+        <video autoplay muted loop id="bg-video">
+            <source src="images/1093662-hd_1920_1080_30fps.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+        <nav>
+            <div class="logo">
+                <img src="" alt="Logo" class="animated-logo">
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" id="dark-mode-toggle">Dark Mode</a></li>
+                </ul>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+        </nav>
+        <div class="header-content">
+            <h1>Welcome to My Portfolio</h1>
+            <p>I'm a graphic designer specializing in digital experiences</p>
+        </div>
+    </header>
+
+    <!-- Projects Section with Parallax Scrolling -->
+    <section id="projects" class="parallax-section" data-aos="fade-up">
+        <h2>My Projects</h2>
+        <div class="projects-grid">
+            <!-- Project Cards -->
+            <div class="project-card" data-aos="zoom-in">
+                <img src="images/thumbnails/girls edu important.jpg" alt="Project 1">
+                <div class="project-info">
+                    <h3>Youtube Thumbnail Design</h3>
+                    <p>Description of the project goes here. Hover to preview.</p>
+                </div>
+            </div>
+            <div class="project-card" data-aos="zoom-in">
+                <img src="media/project2.jpg" alt="Project 2">
+                <div class="project-info">
+                    <h3>Project Two</h3>
+                    <p>Description of the project goes here. Hover to preview.</p>
+                </div>
+            </div>
+            <!-- Add more projects similarly -->
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section" data-aos="fade-right">
+        <h2>About Me</h2>
+        <p>I'm a passionate graphic designer with 5 years of experience in creating interactive digital experiences.</p>
+        <img src="images/Snapinsta.app_301773278_1339632656566917_3197940372354301108_n_1080.jpg" alt="Profile Image" class="profile-img">
+    </section>
+     <!-- Contact Section with Form -->
+     <section id="contact" class="contact-section">
+        <h2>Contact Me</h2>
+        <form id="contact-form" action="/submit-form" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Graphic Designer Portfolio</p>
+    </footer>
+
+    <!-- JS Libraries -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init(); // Initialize scroll animations
+
+        // Dark Mode Toggle
+        const toggleButton = document.getElementById('dark-mode-toggle');
+        toggleButton.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+        });
+
+        // Preloader
+        window.addEventListener('load', () => {
+            document.getElementById('preloader').style.display = 'none';
+        });
+
+        // Hamburger Menu
+        function toggleMenu() {
+            document.querySelector('.menu').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
